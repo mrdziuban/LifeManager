@@ -90,3 +90,40 @@
 form.new-item-form {
   display: none;
 }
+
+div.list-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 600px;
+  background: url("mooning.png");
+  width: 800px;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0px 0px 5px #000;
+  overflow: scroll;
+}
+
+.list-add-item-link, .list-delete-list-link {
+  padding: 0;
+  margin: 0;
+  text-decoration: underline;
+}
+
+.list-add-item-link:hover,
+.list-delete-list-link:hover {
+  cursor: pointer;
+}
+
+ul.items {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  list-style: none;
+}
+
+ul.items > li {
+  padding: 5px;
+}

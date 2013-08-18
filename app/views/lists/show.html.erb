@@ -1,0 +1,32 @@
+<style>
+  body {
+    background: url(<%= asset_path "grey_wash_wall.png" %>);
+  }
+</style>
+
+<div id="<%= @list.id %>" class="list-content">
+  <h1><%= @list.title %></h1>
+  <h6 class="list-add-item-link">Add item</h6>
+  <h6 class="list-delete-list-link">Delete list</h6>
+
+  <form class="new-item-form" action="<%= items_url %>" method="post">
+    <label for="item_text">Text</label>
+    <textarea name="item[text]" id="item_text"></textarea>
+    <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+    <br>
+    <input type='submit' value='Add'>
+  </form>
+
+  <ul class="items">
+    <h6 class="completion-help">(click to toggle completion)</h6>
+    <% @list.items.each do |item| %>
+      <li id="<%= item.id %>" <%= "class=completed" if item.completed? %>><%= item.text %></li>
+    <% end %>
+  </ul>
+</div>
+
+<script>
+  $(function () {
+    List.init();
+  });
+</script>
