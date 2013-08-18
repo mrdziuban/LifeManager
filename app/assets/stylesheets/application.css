@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require_tree .
+ *= require bootstrap
  */
 
 body {
@@ -210,3 +211,4 @@ ul.items > li {
   display: block;
   font-size: 12px;
 }
+
