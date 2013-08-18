@@ -1,14 +1,23 @@
-#sidebar {
-  float: left;
-  position: fixed;
-  height: 100%;
-  width: 25%;
-}
-
 #content {
+  position: absolute;
+  left: 25%;
   float: right;
   height: 100%;
   width: 75%;
+  background: url("mooning.png");
+}
+
+#sidebar {
+  position: absolute;
+  float: left;
+  height: 100%;
+  width: 24.6%;
+  text-align: center;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+#content > h2 {
+  margin-left: 20px;
 }
 
 .add-item {
@@ -21,6 +30,7 @@
 }
 
 .user-lists {
+  margin-left: 50px;
   position: relative;
   list-style: none;
 }
