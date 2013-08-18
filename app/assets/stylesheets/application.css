@@ -26,7 +26,8 @@
 }
 
 .add-item:hover,
-.add-item-link:hover {
+.add-item-link:hover,
+.delete-list-link:hover {
   cursor: pointer;
 }
 
@@ -34,6 +35,10 @@
   margin-left: 50px;
   position: relative;
   list-style: none;
+}
+
+.user-lists > li {
+  position: relative;
 }
 
 .user-lists h3 {
@@ -67,8 +72,15 @@
 .add-item-link {
   text-decoration: underline;
   position: absolute;
-  left: 430px;
-  top: 3px;
+  left: 22px;
+  top: 22px;
+}
+
+.delete-list-link {
+  text-decoration: underline;
+  position: absolute;
+  left: 80px;
+  top: 22px;
 }
 
 form.new-item-form {

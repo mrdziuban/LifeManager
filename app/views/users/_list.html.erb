@@ -3,6 +3,8 @@
     <%= image_tag "circle_plus.png", :class => "circle-plus" %>
   <% end %>
   <h3><%= list.title %></h3>
+  <h6 class="add-item-link">Add item</h6>
+  <h6 class="delete-list-link">Delete list</h6>
 
   <form class="new-item-form" action="<%= items_url %>" method="post">
     <label for="item_text">Text</label>
@@ -13,7 +15,6 @@
   </form>
 
   <ul class="list-items">
-    <h6 class="add-item-link">Add item</h6>
     <h6 class="completion-help">(click to toggle completion)</h6>
     <% list.items.each do |item| %>
       <li id="<%= item.id %>" <%= "class=completed" if item.completed? %>><%= item.text %></li>

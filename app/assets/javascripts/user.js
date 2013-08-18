@@ -25,7 +25,7 @@ var User = function () {
 
     $("#content").on("click", ".add-item-link", function (event) {
       event.stopPropagation();
-      $(this).closest("ul").siblings(".new-item-form").slideToggle("fast");
+      $(this).siblings(".new-item-form").slideToggle("fast");
     });
 
     $("#content").on("click", ".new-item-form", function (event) {
@@ -33,6 +33,8 @@ var User = function () {
     });
 
     $("#content").on("click", ".new-item-form input[type=submit]", createItem);
+
+    $("#content").on("click", ".delete-list-link", deleteList);
   };
 
   var createList = function (event) {
@@ -95,6 +97,21 @@ var User = function () {
         $(that.form).siblings("ul").append($(data).hide().fadeIn("fast"));
         that.form.reset();
         $(that.form).slideToggle();
+      }
+    });
+  };
+
+  var deleteList = function (event) {
+    event.stopPropagation();
+    var that = this;
+    var listId = $(that).closest("li").attr("id");
+
+    $.ajax({
+      url: "/lists/" + listId,
+      type: "DELETE",
+      success: function () {
+        $(that).closest("li").fadeOut("fast");
+        $(that).closest("li").remove();
       }
     });
   };
