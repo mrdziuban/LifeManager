@@ -12,6 +12,8 @@
   <form class="new-item-form" action="<%= items_url %>" method="post">
     <label for="item_text">Text</label>
     <textarea name="item[text]" id="item_text"></textarea>
+    <label for="item_deadline">Deadline</label>
+    <input type="date" name="item[deadline]" id="item_deadline">
     <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
     <br>
     <input type='submit' value='Add'>

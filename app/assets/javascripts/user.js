@@ -6,8 +6,8 @@ var User = function () {
     $("#sidebar input[type=submit]").on("click", createList)
 
     $(".add-item").on("click", function () {
-      var itemId = $("#sidebar form > textarea").length
-      var html = "<div class='new-list-item'><label for='list_item_" + itemId + "_text'>Text</label><textarea name='list[items_attributes][" + itemId + "][text]'' id='list_item_" + itemId + "_text'></textarea><br></div>"
+      var itemId = $("#sidebar textarea").length
+      var html = "<div class='new-list-item'><label for='list_item_" + itemId + "_text'>Text</label><textarea name='list[items_attributes][" + itemId + "][text]' id='list_item_" + itemId + "_text'></textarea><label for='list_item_" + itemId + "_deadline'>Deadline</label><input type='date' name='list[items_attributes][" + itemId + "][deadline]'<br></div>"
       $("#sidebar input[type=submit]").before($(html).hide().fadeIn("fast"));
     });
 
