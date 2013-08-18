@@ -18,6 +18,10 @@
   overflow: scroll;
 }
 
+.sign-out {
+  color: #333333;
+}
+
 #content > h2 {
   margin-left: 20px;
 }

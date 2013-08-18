@@ -1,4 +1,6 @@
 class ListsController < ApplicationController
+  before_filter :authenticate_user!
+  
   def create
     @list = List.create!(params[:list])
     if request.xhr?

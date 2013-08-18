@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_filter :authenticate_user!
+  
   def create
     @item = Item.create!(params[:item])
     if request.xhr?
