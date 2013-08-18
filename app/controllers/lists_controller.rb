@@ -2,7 +2,7 @@ class ListsController < ApplicationController
   def create
     @list = List.create!(params[:list])
     if request.xhr?
-      render partial: "list", locals: {list: @list}
+      render partial: "users/list", locals: {list: @list}
     end
   end
 
