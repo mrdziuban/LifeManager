@@ -2,6 +2,33 @@ body {
   background: url("grey_wash_wall.png");
 }
 
+.forgot-password,
+.sign-up,
+.sign-in {
+  background: url("mooning.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  margin: auto;
+  box-shadow: 0 0 10px #000;
+  text-align: center;
+}
+
+.sign-up {
+  height: 415px;
+}
+
+.sign-in {
+  height: 375px;
+}
+
+.forgot-password {
+  height: 250px;
+}
+
 #content {
   position: absolute;
   left: 25%;
