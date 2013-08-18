@@ -12,4 +12,12 @@
   </form>
 </div>
 
-<div id="content"></div>
+<div id="content">
+  <% if @user.lists.empty? %>
+    <h3>You haven't created any lists yet! You can create one in the sidebar.</h3>
+  <% else %>
+    <% @user.lists.each do |list| %>
+      <%= render partial: "list", locals: {list: list} %>
+    <% end %>
+  <% end %>
+</div>
