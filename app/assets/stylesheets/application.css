@@ -10,3 +10,12 @@
   height: 100%;
   width: 75%;
 }
+
+.add-item {
+  color: gray;
+  text-decoration: underline;
+}
+
+.add-item:hover {
+  cursor: pointer;
+}
