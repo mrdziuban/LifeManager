@@ -120,7 +120,11 @@ div.list-content {
   overflow: scroll;
 }
 
-.list-add-item-link, .list-delete-list-link {
+div.list-content > h6 {
+  margin: 0;
+}
+
+.list-add-item-link, .list-delete-list-link, .all-lists-link {
   padding: 0;
   margin: 0;
   text-decoration: underline;
@@ -130,7 +134,8 @@ div.list-content {
 }
 
 .list-add-item-link:hover,
-.list-delete-list-link:hover {
+.list-delete-list-link:hover,
+.all-lists-link:hover {
   cursor: pointer;
   color: #333333;
 }

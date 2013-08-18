@@ -6,6 +6,7 @@
 
 <div id="<%= @list.id %>" class="list-content">
   <h1><%= @list.title %></h1>
+  <h6><%= link_to "All lists", root_url, :class => "all-lists-link" %></h6>
   <h6 class="list-add-item-link">Add item</h6>
   <%= link_to "Delete list", list_url(@list), method: :delete, :class => "list-delete-list-link" %>
 
