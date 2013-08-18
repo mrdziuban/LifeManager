@@ -19,7 +19,9 @@ var User = function () {
       else {
         $(this).find(".circle-plus").attr("src", "/assets/circle_plus.png");
       }
-    })
+    });
+
+    $(".list-items > li").on("click", toggleCompletion);
   };
 
   var createList = function (event) {
@@ -36,6 +38,28 @@ var User = function () {
       success: function (data) {
         $("#content .user-lists").append($(data).hide().fadeIn("fast"));
         that.form.reset();
+      },
+      error: function () {
+        console.log("error");
+      }
+    });
+  };
+
+  var toggleCompletion = function () {
+    var that = this;
+    var id = $(that).attr("id");
+
+    var data = {
+      id: id
+    };
+
+    $.ajax({
+      url: "/toggle_complete",
+      method: "POST",
+      data: data,
+      success: function () {
+        console.log("success");
+        $(that).toggleClass("completed", $(that).attr("class") === undefined)
       },
       error: function () {
         console.log("error");

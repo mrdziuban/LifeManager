@@ -3,6 +3,7 @@ LifeManager::Application.routes.draw do
 
   resources :lists, only: [:create, :destroy]
   resources :items, only: [:create]
+  post "toggle_complete" => "items#toggle_complete", as: "toggle_complete"
 
   root to: "users#show"
 end

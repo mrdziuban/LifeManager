@@ -55,3 +55,9 @@
   font-style: italic;
   color: #696969;
 }
+
+.completed {
+  text-decoration: line-through;
+  color: #696969;
+  font-style: italic;
+}
