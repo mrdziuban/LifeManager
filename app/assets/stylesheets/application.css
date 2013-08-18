@@ -5,6 +5,7 @@
   height: 100%;
   width: 75%;
   background: url("mooning.png");
+  overflow: scroll;
 }
 
 #sidebar {
@@ -14,6 +15,7 @@
   width: 24.6%;
   text-align: center;
   box-shadow: 5px 5px 5px #888888;
+  overflow: scroll;
 }
 
 #content > h2 {
