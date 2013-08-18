@@ -1,17 +1,17 @@
 var User = function () {
   var userId;
 
-  var init = function (myUserId) {
+  var init = function (myUserId, formAuthenticityToken) {
     userId = myUserId;
     $("#sidebar input[type=submit]").on("click", createList)
 
     $(".add-item").on("click", function () {
       var itemId = $("form > textarea").length
-      var html = "<label for='list_item_" + itemId + "_text'>Text</label><textarea name='list[items_attributes][" + itemId + "][text]'' id='list_item_" + itemId + "_text'></textarea><br>"
+      var html = "<div class='new-list-item'><label for='list_item_" + itemId + "_text'>Text</label><textarea name='list[items_attributes][" + itemId + "][text]'' id='list_item_" + itemId + "_text'></textarea><br></div>"
       $("input[type=submit]").before($(html).hide().fadeIn("fast"));
     });
 
-    $(".user-lists > li").on("click", function () {
+    $("#content").on("click", ".user-lists > li", function () {
       $(this).children(".list-items").slideToggle("fast");
       if ($(this).find(".circle-plus").attr("src") == "/assets/circle_plus.png" || $(this).find(".circle-plus").attr("src") == "/assets/circle_plus-f0ee6d85e489c5b6de90ded216286da9.png") {
         $(this).find(".circle-plus").attr("src", "/assets/circle_minus.png");
@@ -21,7 +21,18 @@ var User = function () {
       }
     });
 
-    $(".list-items > li").on("click", toggleCompletion);
+    $("#content").on("click", ".list-items > li", toggleCompletion);
+
+    $("#content").on("click", ".add-item-link", function (event) {
+      event.stopPropagation();
+      $(this).closest("ul").siblings(".new-item-form").slideToggle("fast");
+    });
+
+    $("#content").on("click", ".new-item-form", function (event) {
+      event.stopPropagation();
+    });
+
+    $("#content").on("click", ".new-item-form input[type=submit]", createItem);
   };
 
   var createList = function (event) {
@@ -38,6 +49,7 @@ var User = function () {
       success: function (data) {
         $("#content .user-lists").append($(data).hide().fadeIn("fast"));
         that.form.reset();
+        $("#sidebar .new-list-item").remove();
       },
       error: function () {
         console.log("error");
@@ -59,10 +71,30 @@ var User = function () {
       method: "POST",
       data: data,
       success: function () {
-        $(that).toggleClass("completed", $(that).attr("class") === undefined)
+        $(that).toggleClass("completed", $(that).attr("class") === undefined || $(that).attr("class") === "")
       },
       error: function () {
         console.log("error");
+      }
+    });
+  };
+
+  var createItem = function (event) {
+    var that = this;
+    event.preventDefault();
+    var listId = $(that).closest("li").attr("id");
+
+    var formData = $(that.form).serialize();
+    formData += "&item%5Blist_id%5D=" + listId;
+
+    $.ajax({
+      url: that.form.action,
+      type: "POST",
+      data: formData,
+      success: function (data) {
+        $(that.form).siblings("ul").append($(data).hide().fadeIn("fast"));
+        that.form.reset();
+        $(that.form).slideToggle();
       }
     });
   };

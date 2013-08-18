@@ -1,6 +1,9 @@
 class ItemsController < ApplicationController
   def create
-
+    @item = Item.create!(params[:item])
+    if request.xhr?
+      render partial: "users/item", locals: {item: @item}
+    end
   end
 
   def toggle_complete

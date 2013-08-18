@@ -25,7 +25,8 @@
   text-decoration: underline;
 }
 
-.add-item:hover {
+.add-item:hover,
+.add-item-link:hover {
   cursor: pointer;
 }
 
@@ -36,6 +37,7 @@
 }
 
 .user-lists h3 {
+  position: relative;
   padding-left: 20px;
 }
 
@@ -60,4 +62,15 @@
   text-decoration: line-through;
   color: #696969;
   font-style: italic;
+}
+
+.add-item-link {
+  text-decoration: underline;
+  position: absolute;
+  left: 430px;
+  top: 3px;
+}
+
+form.new-item-form {
+  display: none;
 }
