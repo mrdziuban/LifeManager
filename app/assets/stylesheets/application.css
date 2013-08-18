@@ -149,3 +149,8 @@ ul.items > li {
 .items > li > div {
   font-size: 12px;
 }
+
+.items > li > span {
+  display: block;
+  font-size: 12px;
+}
