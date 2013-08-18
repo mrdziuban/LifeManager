@@ -13,6 +13,10 @@ class ListsController < ApplicationController
   def destroy
     list = List.find(params[:id])
     list.destroy
-    render nothing: true
+    if request.xhr?
+      render nothing: true
+    else
+      redirect_to root_url
+    end
   end
 end

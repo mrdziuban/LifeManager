@@ -1,17 +1,19 @@
 var List = function () {
+  var div = $("div.list-content");
+
   var init = function () {
-    $("div.list-content").on("click", ".list-add-item-link", function () {
+    div.on("click", ".list-add-item-link", function () {
       $(".new-item-form").slideToggle("fast");
     });
 
-    $("div.list-content").on("click", ".new-item-form input[type=submit]", addItem);
+    div.on("click", ".new-item-form input[type=submit]", addItem);
   };
 
   var addItem = function (event) {
     var that = this;
     event.preventDefault();
 
-    var listId = $("div.list-content").attr("id");
+    var listId = div.attr("id");
 
     var formData = $(that.form).serialize();
     formData += "&item%5Blist_id%5D=" + listId;
