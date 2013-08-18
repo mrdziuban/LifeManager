@@ -63,6 +63,14 @@
   display: none;
 }
 
+.list-items > li {
+  width: 80%;
+}
+
+.list-items > li > span {
+  float: right;
+}
+
 .completion-help {
   margin: 0;
   font-style: italic;
@@ -73,6 +81,10 @@
   text-decoration: line-through;
   color: #696969;
   font-style: italic;
+}
+
+.completed span {
+  text-decoration: line-through;
 }
 
 .add-item-link {
@@ -132,4 +144,8 @@ ul.items {
 
 ul.items > li {
   padding: 5px;
+}
+
+.items > li > div {
+  font-size: 12px;
 }

@@ -17,7 +17,12 @@
   <ul class="list-items">
     <h6 class="completion-help">(click to toggle completion)</h6>
     <% list.items.each do |item| %>
-      <li id="<%= item.id %>" <%= "class=completed" if item.completed? %>><%= item.text %></li>
+      <li id="<%= item.id %>" <%= "class=completed" if item.completed? %>>
+        <%= item.text %>
+        <% if item.deadline %>
+          <span><%=l item.deadline, format: "%B %d, %Y" %></span>
+        <% end %>
+      </li>
     <% end %>
   </ul>
 </li>
