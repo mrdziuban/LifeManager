@@ -6,6 +6,9 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Designed and built with all the love in the world by @mdo and @fat.
+ *
+ *= require_self
+ *= require_tree .
  */
 
 .clearfix {

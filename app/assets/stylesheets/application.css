@@ -1,0 +1,12 @@
+#sidebar {
+  float: left;
+  position: fixed;
+  height: 100%;
+  width: 25%;
+}
+
+#content {
+  float: right;
+  height: 100%;
+  width: 75%;
+}
