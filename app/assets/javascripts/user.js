@@ -45,9 +45,10 @@ var User = function () {
     });
   };
 
-  var toggleCompletion = function () {
+  var toggleCompletion = function (event) {
     var that = this;
     var id = $(that).attr("id");
+    event.stopPropagation();
 
     var data = {
       id: id
@@ -58,7 +59,6 @@ var User = function () {
       method: "POST",
       data: data,
       success: function () {
-        console.log("success");
         $(that).toggleClass("completed", $(that).attr("class") === undefined)
       },
       error: function () {
