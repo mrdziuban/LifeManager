@@ -2,7 +2,7 @@
   <% if list.items.length != 0 %>
     <%= image_tag "circle_plus.png", :class => "circle-plus" %>
   <% end %>
-  <h3><%= list.title %></h3>
+  <h3><%= link_to list.title, list_url(list) %></h3>
   <h6 class="add-item-link">Add item</h6>
   <h6 class="delete-list-link">Delete list</h6>
 

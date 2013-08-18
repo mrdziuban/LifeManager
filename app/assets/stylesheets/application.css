@@ -46,6 +46,10 @@
   padding-left: 20px;
 }
 
+.user-lists a {
+  color: #333333;
+}
+
 .circle-plus {
   float: left;
   margin-right: 5px;
