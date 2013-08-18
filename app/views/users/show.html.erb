@@ -1,4 +1,15 @@
-<h1>LifeManager</h1>
+<div id="sidebar">
+  <h2>LifeManager</h2>
 
-<div id="sidebar"></div>
+  <h4 class="new-list-link">Create New List</h4>
+  <form action="<%= lists_url %>" method="post">
+    <label for="list_title">Title</label>
+    <input type="text" name="list[title]" id="list_title">
+    <br>
+
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="submit" value="Create">
+  </form>
+</div>
+
 <div id="content"></div>
