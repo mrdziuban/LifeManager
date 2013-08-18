@@ -22,7 +22,7 @@
   <ul class="items">
     <h6 class="completion-help">(click item to toggle completion)</h6>
     <% @list.items.each do |item| %>
-      <li id="<%= item.id %>" <%= "class=completed" if item.completed? %>>
+      <li id="<%= item.id %>" <%= "class=completed" if item.completed? %> <%= "style=font-weight:bold;" if item.deadline == Date.today %>>
         <%= item.text %>
         <% if item.deadline %>
           <div><%=l item.deadline, format: "%B %d, %Y" %></div>
