@@ -1,7 +1,12 @@
-<h3><%= list.title %></h3>
-<ul class="list-items">
-  <% list.items.each do |item| %>
-    <li><%= item.text %></li>
+<li>
+  <% if list.items.length != 0 %>
+    <%= image_tag "circle_plus.png", :class => "circle-plus" %>
   <% end %>
-</ul>
+  <h3><%= list.title %></h3>
+  <ul class="list-items">
+    <% list.items.each do |item| %>
+      <li><%= item.text %></li>
+    <% end %>
+  </ul>
+</li>
   

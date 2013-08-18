@@ -19,3 +19,23 @@
 .add-item:hover {
   cursor: pointer;
 }
+
+.user-lists {
+  position: relative;
+  list-style: none;
+}
+
+.user-lists h3 {
+  padding-left: 20px;
+}
+
+.circle-plus {
+  float: left;
+  margin-right: 5px;
+  margin-top: 13px;
+  width: 15px;
+}
+
+.list-items {
+  display: none;
+}
