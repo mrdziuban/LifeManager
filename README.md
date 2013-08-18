@@ -22,4 +22,4 @@ A two-page to-do list app with lists and items (with deadlines). LifeManager aim
 * Toggling of item completion
 * Display of item in bold if item is due on current day
 
-Try it out at life-manager.herokuapp.com. Login to demo with with email: test@test.com, password: testpass.
+Try it out at http://life-manager.herokuapp.com. Login to demo with with email: test@test.com, password: testpass.
