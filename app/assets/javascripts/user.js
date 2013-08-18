@@ -12,7 +12,6 @@ var User = function () {
 
     var formData = $(that.form).serialize();
     formData += "&list%5Buser_id%5D=" + userId;
-    console.log(formData);
 
     $.ajax({
       url: that.form.action,
