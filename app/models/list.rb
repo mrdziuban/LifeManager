@@ -5,7 +5,7 @@ class List < ActiveRecord::Base
   validates :title, presence: true
 
   belongs_to :user
-  has_many :items
+  has_many :items, dependent: :destroy
 
   accepts_nested_attributes_for :items, reject_if: :all_blank
 end
