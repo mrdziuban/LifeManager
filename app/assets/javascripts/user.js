@@ -13,7 +13,7 @@ var User = function () {
 
     $("#content").on("click", ".user-lists > li", function () {
       $(this).children(".list-items").slideToggle("fast");
-      if ($(this).find(".circle-plus").attr("src") == "/assets/circle_plus.png" || $(this).find(".circle-plus").attr("src") == "/assets/circle_plus-f0ee6d85e489c5b6de90ded216286da9.png") {
+      if ($(this).find(".circle-plus").attr("src") == "/assets/circle_plus.png" || $(this).find(".circle-plus").attr("src") == "/assets/circle_plus-3085f63c853522da1cb9626ec98a5a68.png") {
         $(this).find(".circle-plus").attr("src", "/assets/circle_minus.png");
       }
       else {
