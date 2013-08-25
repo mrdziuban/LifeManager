@@ -11,6 +11,10 @@ var User = function () {
       $("#sidebar input[type=submit]").before($(html).hide().fadeIn("fast"));
     });
 
+    $("#content").on("click", "h3 > a", function (event) {
+      event.stopPropagation();
+    });
+
     $("#content").on("click", ".user-lists > li", function () {
       $(this).children(".list-items").slideToggle("fast");
       if ($(this).find(".circle-plus").attr("src") == "/assets/circle_plus.png" || $(this).find(".circle-plus").attr("src") == "/assets/circle_plus-3085f63c853522da1cb9626ec98a5a68.png") {
